@@ -9,7 +9,7 @@
   "NFT_NAME": "Fancy Dragons",
   "SYMBOL": "FD",
   "MAX_SUPPLY": 6666,
-  "WEI_COST": 0,
+  "WEI_COST": 0000000000000000000,
   "DISPLAY_COST": "0",
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
