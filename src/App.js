@@ -273,7 +273,7 @@ function App() {
                <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                 if you're whitelisted
+                 if you're freewhitelisted
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.SpacerSmall />
