@@ -1,10 +1,10 @@
 {
-  "CONTRACT_ADDRESS": "0xbD8a43DaDaA5d97FF7068A6B734CD4CFeaC288dF",
-  "SCAN_LINK": "https://polygonscan.com/address/0xbD8a43DaDaA5d97FF7068A6B734CD4CFeaC288dF",
+  "CONTRACT_ADDRESS": "0xbd8a43dadaa5d97ff7068a6b734cd4cfeac288df",
+  "SCAN_LINK": "https://etherscan.io/address/0xbd8a43dadaa5d97ff7068a6b734cd4cfeac288df",
   "NETWORK": {
-    "NAME": "Polygon",
-    "SYMBOL": "Matic",
-    "ID": 137
+    "NAME": "Ethereum",
+    "SYMBOL": "ETH",
+    "ID": 1
   },
   "NFT_NAME": "Fancy Dragons",
   "SYMBOL": "FD",
@@ -13,6 +13,6 @@
   "DISPLAY_COST": "0",
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/collection/fancy-dragons",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/0xfancydragons",
   "SHOW_BACKGROUND": true
 }
