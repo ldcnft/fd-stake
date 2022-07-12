@@ -398,7 +398,7 @@ function App() {
                           getData();
                         }}
                       >
-                        10
+                        20
                       </StyledRoundButton>
 <s.SpacerMedium />
                       <StyledRoundButton
@@ -409,7 +409,7 @@ function App() {
                           getData();
                         }}
                       >
-                        10
+                        30
                       </StyledRoundButton>
 <s.SpacerMedium />
                       <StyledRoundButton
@@ -420,7 +420,7 @@ function App() {
                           getData();
                         }}
                       >
-                        10
+                        Max
                       </StyledRoundButton>
                     </s.Container>
                     <s.SpacerSmall />
