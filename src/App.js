@@ -164,6 +164,28 @@ function App() {
     setMintAmount(newMintAmount);
   };
 
+    const tenMintAmount = () => {
+    let newMintAmount = 10;
+
+    setMintAmount(newMintAmount);
+  };
+    const twentyMintAmount = () => {
+    let newMintAmount = 20;
+
+    setMintAmount(newMintAmount);
+  };
+  
+    const thirtyMintAmount = () => {
+    let newMintAmount = 30;
+    setMintAmount(newMintAmount);
+  };
+  
+      const maxMintAmount = () => {
+    let newMintAmount = 66;
+
+    setMintAmount(newMintAmount);
+  };
+  
   const getData = () => {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
       dispatch(fetchData(blockchain.account));
@@ -352,6 +374,53 @@ function App() {
                         }}
                       >
                         +
+                      </StyledRoundButton>
+                    </s.Container>
+                    <s.SpacerMedium />
+                        
+<s.Container ai={"center"} jc={"center"} fd={"row"}>
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          tenMintAmount();
+                          getData();
+                        }}
+                      >
+                        10
+                      </StyledRoundButton>
+<s.SpacerMedium />
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          twentyMintAmount();
+                          getData();
+                        }}
+                      >
+                        10
+                      </StyledRoundButton>
+<s.SpacerMedium />
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          thirtyMintAmount();
+                          getData();
+                        }}
+                      >
+                        10
+                      </StyledRoundButton>
+<s.SpacerMedium />
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          maxMintAmount();
+                          getData();
+                        }}
+                      >
+                        10
                       </StyledRoundButton>
                     </s.Container>
                     <s.SpacerSmall />
