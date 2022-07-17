@@ -3,14 +3,14 @@
   "SCAN_LINK": "https://polygonscan.com/address/0xbd8a43dadaa5d97ff7068a6b734cd4cfeac288df",
   "NETWORK": {
     "NAME": "Polygon",
-    "SYMBOL": "Matic Instead Of  6̶ ̶M̶a̶t̶i̶c̶",
+    "SYMBOL": "Matic",
     "ID": 137
   },
   "NFT_NAME": "Fancy Dragons",
   "SYMBOL": "FD",
   "MAX_SUPPLY": 6666,
-  "WEI_COST": 660000000000000000,
-  "DISPLAY_COST": "0.66",
+  "WEI_COST": 6000000000000000000,
+  "DISPLAY_COST": "6",
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
   "MARKETPLACE_LINK": "https://opensea.io/collection/fancy-dragons-polygon",
