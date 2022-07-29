@@ -381,7 +381,49 @@ function App() {
 <s.Container ai={"center"} jc={"center"} fd={"row"}>
 
   
-  
+                        <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          tenMintAmount();
+                          getData();
+                        }}
+                      >
+                        10
+                      </StyledRoundButton>
+<s.SpacerMedium />
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          twentyMintAmount();
+                          getData();
+                        }}
+                      >
+                        20
+                      </StyledRoundButton>
+<s.SpacerMedium />
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          thirtyMintAmount();
+                          getData();
+                        }}
+                      >
+                        30
+                      </StyledRoundButton>
+<s.SpacerMedium />
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          maxMintAmount();
+                          getData();
+                        }}
+                      >
+                        Max
+                      </StyledRoundButton>
   
   
   
