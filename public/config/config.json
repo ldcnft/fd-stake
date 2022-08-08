@@ -1,6 +1,6 @@
 {
-  "CONTRACT_ADDRESS": "0xbd8a43dadaa5d97ff7068a6b734cd4cfeac288df",
-  "SCAN_LINK": "https://polygonscan.com/address/0xbd8a43dadaa5d97ff7068a6b734cd4cfeac288df",
+  "CONTRACT_ADDRESS": "0xD2D81C2521292BB1D6F2C70eaC7bdfF00A1Eb539",
+  "SCAN_LINK": "https://polygonscan.com/address/0xD2D81C2521292BB1D6F2C70eaC7bdfF00A1Eb539",
   "NETWORK": {
     "NAME": "Polygon",
     "SYMBOL": "MATIC  ̶6̶ ̶M̶A̶T̶I̶C̶",
@@ -9,10 +9,10 @@
   "NFT_NAME": "Fancy Dragons",
   "SYMBOL": "FD",
   "MAX_SUPPLY": 6666,
-  "WEI_COST": 66000000000000000,
-  "DISPLAY_COST": "0.066",
+  "WEI_COST": 0,
+  "DISPLAY_COST": "0",
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/collection/fancy-dragons-polygon",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/fancy-dragons",
   "SHOW_BACKGROUND": true
 }
