@@ -379,7 +379,22 @@ function App() {
                     <s.SpacerMedium />
                      
   
-  
+                        
+<s.Container ai={"center"} jc={"center"} fd={"row"}>
+<s.TextDescription
+                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                >
+                  Free   Max   Per   Txn: 3
+                </s.TextDescription>
+<s.SpacerSmall />
+<s.TextDescription
+                  style={{ textAlign: "center", color: "var(--accent-text)"}}
+                >
+                  Or Unlimited <StyledLink target={"_blank"} href="https://paid.fancydragons.xyz" style={{textDecorationLine:"underline"}}>
+                  Here
+                </StyledLink>
+                  </s.TextDescription>
+                    </s.Container>
   
   
   
