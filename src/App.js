@@ -150,16 +150,16 @@ function App() {
 
   const decrementMintAmount = () => {
     let newMintAmount = mintAmount - 1;
-    if (newMintAmount < 1) {
-      newMintAmount = 1;
+    if (newMintAmount < 4) {
+      newMintAmount = 4;
     }
     setMintAmount(newMintAmount);
   };
 
   const incrementMintAmount = () => {
     let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 3) {
-      newMintAmount = 3;
+    if (newMintAmount > 66) {
+      newMintAmount = 66;
     }
     setMintAmount(newMintAmount);
   };
@@ -377,32 +377,68 @@ function App() {
                       </StyledRoundButton>
                     </s.Container>
                     <s.SpacerMedium />
-                     
-  
                         
 <s.Container ai={"center"} jc={"center"} fd={"row"}>
-<s.TextDescription
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
-                >
-                  Free   Max   Per   Txn: 3
-                </s.TextDescription>
-<s.SpacerSmall />
-<s.TextDescription
-                  style={{ textAlign: "center", color: "var(--accent-text)"}}
-                >
-                  Or Unlimited <StyledLink target={"_blank"} href="https://paid.fancydragons.xyz" style={{textDecorationLine:"underline"}}>
-                  Here
-                </StyledLink>
-                  </s.TextDescription>
+
+  
+                        <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          tenMintAmount();
+                          getData();
+                        }}
+                      >
+                        10
+                      </StyledRoundButton>
+<s.SpacerMedium />
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          twentyMintAmount();
+                          getData();
+                        }}
+                      >
+                        20
+                      </StyledRoundButton>
+<s.SpacerMedium />
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          thirtyMintAmount();
+                          getData();
+                        }}
+                      >
+                        30
+                      </StyledRoundButton>
+<s.SpacerMedium />
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          maxMintAmount();
+                          getData();
+                        }}
+                      >
+                        Max
+                      </StyledRoundButton>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
                     </s.Container>
-  
-  
-  
-  
-  
-  
-  
-  
                     <s.SpacerSmall />
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
                       <StyledButton
