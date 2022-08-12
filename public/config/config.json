@@ -1,6 +1,6 @@
 {
-  "CONTRACT_ADDRESS": "0xD2D81C2521292BB1D6F2C70eaC7bdfF00A1Eb539",
-  "SCAN_LINK": "https://polygonscan.com/address/0xD2D81C2521292BB1D6F2C70eaC7bdfF00A1Eb539",
+  "CONTRACT_ADDRESS": "0xbD8a43DaDaA5d97FF7068A6B734CD4CFeaC288dF",
+  "SCAN_LINK": "https://polygonscan.com/address/0xbD8a43DaDaA5d97FF7068A6B734CD4CFeaC288dF",
   "NETWORK": {
     "NAME": "Polygon",
     "SYMBOL": "6̶ ̶M̶A̶T̶I̶C̶",
@@ -13,6 +13,6 @@
   "DISPLAY_COST": "Free",
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/collection/fancy-dragons",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/fancy-dragons-polygon",
   "SHOW_BACKGROUND": true
 }
