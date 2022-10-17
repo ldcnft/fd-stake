@@ -185,25 +185,18 @@ function App() {
     setMintAmount(newMintAmount);
   };
   
-  class Input extends React.Component{
+export const RangeSlider = () => {
 
-    // render:
-    render(){
-        return (
-            <div className="Input">
-                <input type="range" defaultValue="20000" min="0" max="100000" step="5"
-                    onChange={(e) => Input.onChange(e.target.value)}
-                />
-            </div>
-        )
-    }
-    
-    //onChange:
-    static onChange(value){
-        console.log('value', value);
-    }
+  const [rangeval, setRangeval] = useState(null);
 
-}
+  return (
+    <div>
+      <input type="range" className="custom-range" min="1" max="66" 
+       onChange={(event) => setRangeval(event.target.value)} />
+      <h4>The range value is {rangeval}</h4>
+    </div>
+  );
+};
   
   const getData = () => {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
@@ -458,6 +451,15 @@ function App() {
   
                     </s.Container>
                     <s.SpacerSmall />
+
+                        <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                          
+                          <RangeSlider>
+                          </RangeSlider>
+                          
+                          </s.Container>
+                          
+                                                  <s.SpacerSmall />
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
                       <StyledButton
                         disabled={claimingNft ? 1 : 0}
