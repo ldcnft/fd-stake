@@ -95,6 +95,19 @@ function App() {
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
   const [rangeval, setRangeval] = useState(1);
+   const RangeSlider = () => {
+   
+     const [rangeval, setRangeval] = useState(1);
+   
+  return (
+    <div>
+      <input type="range" className="custom-range" min="1" max="66" defaultValue="1" 
+       onChange={(event) => setRangeval(event.target.value)} />
+      <h4>You are gonna mint {rangeval} Fancy Dragons</h4>
+    </div>
+  );
+};
+  
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
@@ -124,7 +137,7 @@ function App() {
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
-    
+    setRangeval(rangeval);
     blockchain.smartContract.methods
       .mint(rangeval)
       .send({
@@ -148,22 +161,6 @@ function App() {
       });
   };
 
-
-
-  
- const RangeSlider = () => {
-   
-     const [rangeval, setRangeval] = useState(1);
-   
-  return (
-    <div>
-      <input type="range" className="custom-range" min="1" max="66" defaultValue="1" 
-       onChange={(event) => setRangeval(event.target.value)} />
-      <h4>You are gonna mint {rangeval} Fancy Dragons</h4>
-    </div>
-  );
-};
-  
   const getData = () => {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
       dispatch(fetchData(blockchain.account));
