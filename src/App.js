@@ -193,7 +193,7 @@ function App() {
     <div>
       <input type="range" className="custom-range" min="1" max="66" defaultValue="1" 
        onChange={(event) => setRangeval(event.target.value)} />
-      <h4>You are gonna mint {rangeval} Fancy Dragons</h4>
+      <h4 style:"color:#bb9772; text-align:center;">You are gonna mint {rangeval} Fancy Dragons</h4>
     </div>
   );
 };
