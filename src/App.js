@@ -95,7 +95,7 @@ function App() {
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
-  const [mintAmount, setRangeval] = useState(1);
+  const [mintAmount, setMintAmount] = useState(1);
   const [rangeval, setRangeval] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
@@ -125,7 +125,7 @@ function App() {
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
-    setMintAmount(rangeval);
+    let setMintAmount = setRangeval;
     setRangeval(rangeval);
     blockchain.smartContract.methods
       .mint(rangeval)
