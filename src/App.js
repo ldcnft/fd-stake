@@ -173,8 +173,6 @@ function App() {
   
  const RangeSlider = () => {
 
-  const [rangeval, setRangeval] = useState(1);
-
   return (
     <div>
       <input type="range" className="custom-range" min="1" max="66" defaultValue="1" 
