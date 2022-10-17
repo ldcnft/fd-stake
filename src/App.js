@@ -185,6 +185,26 @@ function App() {
     setMintAmount(newMintAmount);
   };
   
+  class Input extends React.Component{
+
+    // render:
+    render(){
+        return (
+            <div className="Input">
+                <input type="range" defaultValue="20000" min="0" max="100000" step="5"
+                    onChange={(e) => Input.onChange(e.target.value)}
+                />
+            </div>
+        )
+    }
+    
+    //onChange:
+    static onChange(value){
+        console.log('value', value);
+    }
+
+}
+  
   const getData = () => {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
       dispatch(fetchData(blockchain.account));
