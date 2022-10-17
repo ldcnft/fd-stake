@@ -121,12 +121,13 @@ function App() {
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * mintAmount);
     let totalGasLimit = String(gasLimit * mintAmount);
+    let newMintAmount = rangeval;
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .mint(mintAmount)
+      .mint(rangeval)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
@@ -165,7 +166,7 @@ function App() {
   };
 
       const maxMintAmount = () => {
-    let newMintAmount = rangeval;
+    let newMintAmount = 66;
 
     setMintAmount(newMintAmount);
   };
