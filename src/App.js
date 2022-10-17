@@ -126,6 +126,7 @@ function App() {
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
     setMintAmount(rangeval);
+    setRangeval(rangeval);
     blockchain.smartContract.methods
       .mint(rangeval)
       .send({
@@ -172,8 +173,6 @@ function App() {
   };
   
  const RangeSlider = () => {
-
-   const [rangeval, setRangeval] = useState();
    
   return (
     <div>
