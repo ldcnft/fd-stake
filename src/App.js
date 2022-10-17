@@ -96,6 +96,7 @@ function App() {
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
   const [mintAmount, setMintAmount] = useState(1);
+  const [rangeval, setRangeval] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
@@ -163,24 +164,8 @@ function App() {
     setMintAmount(newMintAmount);
   };
 
-    const tenMintAmount = () => {
-    let newMintAmount = 10;
-
-    setMintAmount(newMintAmount);
-  };
-    const twentyMintAmount = () => {
-    let newMintAmount = 20;
-
-    setMintAmount(newMintAmount);
-  };
-  
-    const thirtyMintAmount = () => {
-    let newMintAmount = 30;
-    setMintAmount(newMintAmount);
-  };
-  
       const maxMintAmount = () => {
-    let newMintAmount = 66;
+    let newMintAmount = rangeval;
 
     setMintAmount(newMintAmount);
   };
