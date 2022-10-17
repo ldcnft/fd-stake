@@ -193,7 +193,7 @@ function App() {
     <div>
       <input type="range" className="custom-range" min="1" max="66" 
        onChange={(event) => setRangeval(event.target.value)} />
-      <h4>The range value is {rangeval}</h4>
+      <h4>You are gonna mint {rangeval} Fancy Dragons</h4>
     </div>
   );
 };
@@ -454,7 +454,11 @@ function App() {
 
                         <s.Container ai={"center"} jc={"center"} fd={"row"}>
                           
-                          <RangeSlider>
+                          <RangeSlider
+                          style={{
+              color: "var(--primary-text)",
+            }}
+              >
                           </RangeSlider>
                           
                           </s.Container>
