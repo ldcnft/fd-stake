@@ -185,7 +185,7 @@ function App() {
     setMintAmount(newMintAmount);
   };
   
-export const RangeSlider = () => {
+ const RangeSlider = () => {
 
   const [rangeval, setRangeval] = useState(null);
 
