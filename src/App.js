@@ -173,7 +173,7 @@ function App() {
   
  const RangeSlider = () => {
 
-   const [rangeval, setRangeval] = useState(1);
+   const [rangeval, setRangeval] = useState(null);
    
   return (
     <div>
