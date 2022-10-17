@@ -95,7 +95,7 @@ function App() {
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
-  const [rangeval, setMintAmount] = useState(1);
+  const [rangeval, setRangeval] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
@@ -124,7 +124,7 @@ function App() {
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
-    setMintAmount(rangeval);
+    setRangeval(rangeval);
     blockchain.smartContract.methods
       .mint(rangeval)
       .send({
@@ -153,7 +153,7 @@ function App() {
     if (newMintAmount < 1) {
       newMintAmount = 1;
     }
-    setMintAmount(newMintAmount);
+    setRangeval(newMintAmount);
   };
 
   const incrementMintAmount = () => {
@@ -161,13 +161,13 @@ function App() {
     if (newMintAmount > 66) {
       newMintAmount = 66;
     }
-    setMintAmount(newMintAmount);
+    setRangeval(newMintAmount);
   };
 
       const maxMintAmount = () => {
     let newMintAmount = 66;
 
-    setMintAmount(newMintAmount);
+    setRangeval(newMintAmount);
   };
   
  const RangeSlider = () => {
