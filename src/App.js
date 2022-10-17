@@ -148,27 +148,8 @@ function App() {
       });
   };
 
-  const decrementMintAmount = () => {
-    let newMintAmount = rangeval - 1;
-    if (newMintAmount < 1) {
-      newMintAmount = 1;
-    }
-    setRangeval(newMintAmount);
-  };
 
-  const incrementMintAmount = () => {
-    let newMintAmount = rangeval + 1;
-    if (newMintAmount > 66) {
-      newMintAmount = 66;
-    }
-    setRangeval(newMintAmount);
-  };
 
-      const maxMintAmount = () => {
-    let newMintAmount = 66;
-
-    setRangeval(newMintAmount);
-  };
   
  const RangeSlider = () => {
    
