@@ -118,8 +118,8 @@ function App() {
   const claimNFTs = () => {
     let cost = CONFIG.WEI_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
-    let totalCostWei = String(cost * mintAmount);
-    let totalGasLimit = String(gasLimit * mintAmount);
+    let totalCostWei = String(cost * rangeval);
+    let totalGasLimit = String(gasLimit * rangeval);
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
@@ -149,7 +149,7 @@ function App() {
   };
 
   const decrementMintAmount = () => {
-    let newMintAmount = mintAmount - 1;
+    let newMintAmount = rangeval - 1;
     if (newMintAmount < 1) {
       newMintAmount = 1;
     }
@@ -157,7 +157,7 @@ function App() {
   };
 
   const incrementMintAmount = () => {
-    let newMintAmount = mintAmount + 1;
+    let newMintAmount = rangeval + 1;
     if (newMintAmount > 66) {
       newMintAmount = 66;
     }
@@ -360,7 +360,7 @@ function App() {
                           color: "var(--accent-text)",
                         }}
                       >
-                        {mintAmount}
+                        {rangeval}
                       </s.TextDescription>
                       <s.SpacerMedium />
                       <StyledRoundButton
