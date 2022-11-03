@@ -234,7 +234,11 @@ export const StyledLink = styled.a`
                     <>
                               <div>
           <div className="card">
-              <center><h1>Token Number</h1></center>
+                        <s.TextTitle
+                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                >
+                  Token Number
+                  </s.TextTitle>
               <br/>
               <div className="p-fluid grid formgrid">
                   <div className="field col-12 md:col-3">
