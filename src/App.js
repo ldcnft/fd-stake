@@ -131,7 +131,7 @@ function App() {
     .then((receipt) => {
       console.log(receipt);
       setAproveFeedback(
-        `WOW, the ${CONFIG.NFT_NAME} is ready for staking! go <a href='https://google.com'>HERE</a> to stake it.`
+        `WOW, the ${CONFIG.NFT_NAME} is ready for staking! go stake.fancydragons.xyz to stake it.`
       );
       dispatch(fetchData(blockchain.account));
     });
