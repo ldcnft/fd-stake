@@ -490,7 +490,6 @@ function App() {
                     </s.TextDescription>
           <s.SpacerSmall />
           <StyledButton
-                        disabled={claimingNft ? 1 : 0
                         onClick={(e) => {
                           e.preventDefault();
                           approveNFTs();
