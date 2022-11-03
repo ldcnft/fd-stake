@@ -479,13 +479,14 @@ function App() {
                     </s.TextDescription>
           <s.SpacerSmall />
           <StyledButton
+                        disabled={claimingNft ? 1 : 0
                         onClick={(e) => {
                           e.preventDefault();
                           approveNFTs();
                           getData();
                         }}
                       >
-                       Approve
+                       {claimingNft ? "CONNECT" : "APPROVE"}
                       </StyledButton>
         </s.Container>
         <s.SpacerMedium />
