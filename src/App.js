@@ -196,7 +196,7 @@ export const StyledLink = styled.a`
                 color: "var(--accent-text)",
               }}
             >
-              If You Want To Stake Your NFT Click Approve
+              {feedback}
             </s.TextDescription>
 
             {blockchain.account === "" ||
