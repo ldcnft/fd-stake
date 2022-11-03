@@ -242,7 +242,11 @@ export const StyledLink = styled.a`
               <br/>
               <div className="p-fluid grid formgrid">
                   <div className="field col-12 md:col-3">
-                      <InputNumber inputId="minmax-buttons" value={value} onValueChange={(e) => setValue(e.value)} mode="decimal" min={1} max={6666} />
+                                        <s.TextTitle
+                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                >
+                      <InputNumber inputId="minmax-buttons" value={value} onValueChange={(e) => setValue(e.value)} mode="decimal" min={1} max={6666}  />
+                      </s.TextTitle>
                   </div>
               </div>
 
