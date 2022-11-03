@@ -95,6 +95,7 @@ export const StyledLink = styled.a`
     const dispatch = useDispatch();
     const blockchain = useSelector((state) => state.blockchain);
     const data = useSelector((state) => state.data);
+    const [stakingNft, setStakingNft] = useState(false);
     const [value, setValue] = useState(1);
     const [feedback, setFeedback] = useState(`If You Want To Stake Your NFT Click Approve`);
     const [CONFIG, SET_CONFIG] = useState({
@@ -175,10 +176,63 @@ export const StyledLink = styled.a`
         <s.Container
           flex={1}
           ai={"center"}
-          style={{ padding: 24 }}
+          style={{ padding: 24, backgroundColor: "var(--primary)" }}
         >
+          <a href={CONFIG.MARKETPLACE_LINK}>
+            <StyledLogo alt={"logo"} src={"/config/logo.png"} />
+          </a>
           <s.SpacerSmall />
-          <div>
+          <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
+            <s.SpacerLarge />
+            <s.Container
+              flex={2}
+              jc={"center"}
+              ai={"center"}
+              style={{
+              }}
+            >
+                <>
+                  
+                  <s.SpacerXSmall />
+                  <s.SpacerSmall />
+                  {blockchain.account === "" ||
+                  blockchain.smartContract === null ? (
+                    <s.Container ai={"center"} jc={"center"}>
+                      <s.TextDescription
+                        style={{
+                          textAlign: "center",
+                          color: "var(--accent-text)",
+                        }}
+                      >
+                        Connect to the {CONFIG.NETWORK.NAME} network
+                      </s.TextDescription>
+                      <s.SpacerSmall />
+                      <StyledButton
+                        onClick={(e) => {
+                          e.preventDefault();
+                          dispatch(connect());
+                          getData();
+                        }}
+                      >
+                        CONNECT
+                      </StyledButton>
+                      {blockchain.errorMsg !== "" ? (
+                        <>
+                          <s.SpacerSmall />
+                          <s.TextDescription
+                            style={{
+                              textAlign: "center",
+                              color: "var(--accent-text)",
+                            }}
+                          >
+                            {blockchain.errorMsg}
+                          </s.TextDescription>
+                        </>
+                      ) : null}
+                    </s.Container>
+                  ) : (
+                    <>
+                              <div>
           <div className="card">
               <center><h1>Token Number</h1></center>
               <br/>
@@ -190,77 +244,58 @@ export const StyledLink = styled.a`
 
           </div>
       </div>
-          <s.Container jc={"center"} ai={"center"} style={{ width: "70%", marginBottom: "100px" }}>
+                      <s.TextDescription
+                        style={{
+                          textAlign: "center",
+                          color: "var(--accent-text)",
+                        }}
+                      >
+                        {feedback}
+                      </s.TextDescription>
+                      <s.SpacerMedium />
+
+  
+  <s.SpacerMedium />
+                          
+                          
+  
+                      <s.SpacerSmall />
+                      <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                        <StyledButton
+                          disabled={stakingNft ? 1 : 0}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            approveNFTs();
+                            getData();
+                          }}
+                        >
+                          {stakingNft ? "BUSY" : "STAKE"}
+                        </StyledButton>
+                      </s.Container>
+                    </>
+                  )}
+                </>
+              <s.SpacerMedium />
+            </s.Container>
+            <s.SpacerLarge />
+          </ResponsiveWrapper>
+          <s.SpacerMedium />
+          <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
             <s.TextDescription
               style={{
                 textAlign: "center",
-                color: "var(--accent-text)",
+                color: "var(--primary-text)",
               }}
             >
-              {feedback}
+              Please make sure you are connected to the right network (
+              {CONFIG.NETWORK.NAME} Mainnet) and the correct address.
             </s.TextDescription>
-
-            {blockchain.account === "" ||
-                blockchain.smartContract === null ? (
-                  <s.Container ai={"center"} jc={"center"}>
-                    <s.TextDescription
-                      style={{
-                        textAlign: "center",
-                        color: "var(--accent-text)",
-                      }}
-                    >
-                      Connect to the {CONFIG.NETWORK.NAME} network
-                    </s.TextDescription>
-                    <s.SpacerSmall />
-                    <StyledButton
-                      onClick={(e) => {
-                        e.preventDefault();
-                        dispatch(connect());
-                        getData();
-                      }}
-                    >
-                      CONNECT
-                    </StyledButton>
-                    {blockchain.errorMsg !== "" ? (
-                      <>
-                        <s.SpacerSmall />
-                        <s.TextDescription
-                          style={{
-                            textAlign: "center",
-                            color: "var(--accent-text)",
-                          }}
-                        >
-                          {blockchain.errorMsg}
-                        </s.TextDescription>
-                      </>
-                    ) : null}
-                  </s.Container>
-                                  ) : (
-                                    <>
-                                                    
-              </>
-                              )}
-
-
-            <s.SpacerSmall />
-            <StyledButton
-              onClick={(e) => {
-                e.preventDefault();
-                approveNFTs();
-                getData();
-              }}
-            >
-              Stake
-            </StyledButton>
-          </s.Container>
-          <s.SpacerMedium />
-          <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
-
             <s.SpacerSmall />
           </s.Container>
         </s.Container>
       </s.Screen>
     );
   }
-
+  
+  
   export default App;
