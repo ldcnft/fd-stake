@@ -120,7 +120,7 @@ export const StyledLink = styled.a`
 
 
     const approveNFTs = () => {
-      setFeedback(`Approving your ${CONFIG.NFT_NAME}...`);
+      setFeedback(`Staking your ${CONFIG.NFT_NAME}...`);
       blockchain.smartContract.methods
         .stake(String(value))
         .send({
@@ -134,7 +134,7 @@ export const StyledLink = styled.a`
         .then((receipt) => {
           console.log(receipt);
           setFeedback(
-            `WOW, the ${CONFIG.NFT_NAME} is ready for staking! go <a href='https://google.com'>HERE</a> to stake it.`
+            `WOW, the ${CONFIG.NFT_NAME} is staked! You will receive 66 fruit/day.`
           );
           dispatch(fetchData(blockchain.account));
         });
