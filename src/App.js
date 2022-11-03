@@ -468,7 +468,7 @@ function App() {
           </s.Container>
           <s.SpacerLarge />
         </ResponsiveWrapper>
-        <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
+        <s.Container jc={"center"} ai={"center"} style={{ width: "70%", marginBottom: "100px" }}>
         <s.TextDescription
                       style={{
                         textAlign: "center",
@@ -489,7 +489,7 @@ function App() {
                       </StyledButton>
         </s.Container>
         <s.SpacerMedium />
-        <s.Container jc={"center"} ai={"center"} style={{ width: "70%", marginBottom: "100px" }}>
+        <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
           <s.TextDescription
             style={{
               textAlign: "center",
