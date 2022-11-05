@@ -11,9 +11,9 @@ const truncate = (input, len) =>
 
 export const StyledButton = styled.button`
   padding: 10px;
-  border-radius: 50px;
+  font-size: 18px;
   border: none;
-  background-color: var(--secondary);
+  background-color: transparent;
   padding: 10px;
   font-weight: bold;
   color: var(--secondary-text);
@@ -28,9 +28,9 @@ export const StyledButton = styled.button`
 
 export const StyledRoundButton = styled.button`
   padding: 10px;
-  border-radius: 100%;
   border: none;
   background-color: var(--primary);
+  background-color: transparent;
   padding: 10px;
   font-weight: bold;
   font-size: 15px;
@@ -143,6 +143,28 @@ export const StyledLink = styled.a`
     }
 
 
+    const disapproveNFTs = () => {
+      setFeedback(`Withdrawing your ${CONFIG.NFT_NAME}...`);
+      blockchain.smartContract.methods
+        .unstake(String(value))
+        .send({
+          to: CONFIG.CONTRACT_ADDRESS,
+          from: blockchain.account,
+        })
+        .once("error", (err) => {
+          console.log(err);
+          setFeedback("Sorry, something went wrong please try again later.");
+        })
+        .then((receipt) => {
+          console.log(receipt);
+          setFeedback(
+            `WOW, the ${CONFIG.NFT_NAME} is withdrawn! And The Tokens went to your wallet`
+          );
+          dispatch(fetchData(blockchain.account));
+        });
+
+    }
+
 
 
 
@@ -234,7 +256,7 @@ export const StyledLink = styled.a`
                     <>
                               <div>
           <div className="card">
-                        <s.TextTitle
+          <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
                   Token Number
@@ -242,7 +264,7 @@ export const StyledLink = styled.a`
               <br/>
               <div className="p-fluid grid formgrid">
                   <div className="field col-12 md:col-3">
-                                        <s.TextTitle
+                  <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
                       <InputNumber inputId="minmax-buttons" value={value} onValueChange={(e) => setValue(e.value)} mode="decimal" min={1} max={6666}  />
@@ -278,6 +300,17 @@ export const StyledLink = styled.a`
                           }}
                         >
                           {stakingNft ? "BUSY" : "STAKE"}
+                        </StyledButton>
+                        <s.SpacerSmall />
+                        <StyledButton
+                          disabled={stakingNft ? 1 : 0}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            disapproveNFTs();
+                            getData();
+                          }}
+                        >
+                          {stakingNft ? "BUSY" : "WITHDRAW"}
                         </StyledButton>
                       </s.Container>
                     </>
