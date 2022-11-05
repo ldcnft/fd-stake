@@ -11,9 +11,9 @@ const truncate = (input, len) =>
 
 export const StyledButton = styled.button`
   padding: 10px;
-  font-size: 18px;
+  border-radius: 50px;
   border: none;
-  background-color: transparent;
+  background-color: var(--secondary);
   padding: 10px;
   font-weight: bold;
   color: var(--secondary-text);
@@ -28,9 +28,9 @@ export const StyledButton = styled.button`
 
 export const StyledRoundButton = styled.button`
   padding: 10px;
+  border-radius: 100%;
   border: none;
   background-color: var(--primary);
-  background-color: transparent;
   padding: 10px;
   font-weight: bold;
   font-size: 15px;
