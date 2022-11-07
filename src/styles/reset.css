@@ -207,3 +207,13 @@ button {
 .md\:col-3 {
     width: 100%;
 }
+
+.p-button:enabled:hover, .p-button:not(button):not(a):not(.p-disabled):hover {
+    background: #c09872;
+    color: #f3eadb;
+    border-color: #c09872;
+}
+
+.p-inputtext:enabled:hover {
+    border-color: #bb9772;
+}
