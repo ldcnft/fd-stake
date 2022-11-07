@@ -258,6 +258,7 @@ export const StyledLink = styled.a`
                     </s.Container>
                   ) : (
                     <>
+                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
                               <div>
           <div className="card">
           <s.TextTitle
@@ -278,6 +279,8 @@ export const StyledLink = styled.a`
 
           </div>
       </div>
+
+ </s.Container>
                       <s.TextDescription
                         style={{
                           textAlign: "center",
