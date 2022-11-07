@@ -268,7 +268,7 @@ export const StyledLink = styled.a`
                   </s.TextTitle>
               <br/>
               <div className="p-fluid grid formgrid">
-                  <div className="field col-12 md:col-3">
+                  <div className="field col-12 md:col-12">
                   <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
