@@ -259,7 +259,7 @@ export const StyledLink = styled.a`
           <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  Token Number
+                  Token You Want Stake Or Withdraw
                   </s.TextTitle>
               <br/>
               <div className="p-fluid grid formgrid">
@@ -267,7 +267,7 @@ export const StyledLink = styled.a`
                   <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                      <InputNumber inputId="minmax-buttons" value={value} onValueChange={(e) => setValue(e.value)} mode="decimal" min={1} max={6666}  />
+                      <InputNumber inputId="minmax-buttons" value={value} onValueChange={(e) => setValue(e.value)} mode="decimal" showButtons min={1} max={6666}  />
                       </s.TextTitle>
                   </div>
               </div>
