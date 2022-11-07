@@ -5,6 +5,10 @@ import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
 import { InputNumber } from 'primereact/inputnumber';
+import 'primeicons/primeicons.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/primereact.css';
+import 'primeflex/primeflex.css'
 
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
